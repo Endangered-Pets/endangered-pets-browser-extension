@@ -1,16 +1,20 @@
 {
-  "manifest_version": 2,
-  "name": "Endangered Browser Pet",
-  "description": "Pet Pangolin in your web browser",
-  "version": "1.0.0",
-    "chrome_url_overrides" : {
-    	"newtab": "pet-page.html"
-  	},
-  "web_accessible_resources": [
-    "images/*"
-  ],
-  "permissions": [
-    "*://*/*",
-    "<all_urls>"
-  ]
+    "manifest_version": 2,
+    "name": "Endangered Pets Browser Extension",
+    "short_name": "EP",
+    "version": "1.0.0",
+    "description": "A chrome extension lets you have your very own virtual pets",
+    "author": "Endangered Pets",
+    "homepage_url": "http://github.com/rossmccrann",
+    "chrome_url_overrides": {
+      "newtab": "index.html"
+    },
+    "background": {
+      "scripts": ["src/js/background.js"]
+    },
+    "permissions": [
+      "storage",
+      "tabs",
+      "activeTab"
+    ]
 }
