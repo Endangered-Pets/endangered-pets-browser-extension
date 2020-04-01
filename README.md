@@ -2,6 +2,10 @@
 # Pangolin Browser Pet Extension
 A cross-browser extension that provides a pangolin as an interactive mini pet to raise awareness for the pangolin and other critically endangered species.
 
+
+[![Pangolin-Demo](http://img.youtube.com/vi/AGxtuEYzIr8/0.jpg)](http://www.youtube.com/watch?v=AGxtuEYzIr8 "Pangolin-Demo")
+
+
 ### How to run an extension in developer mode
 In order to develop an extension you need to run it in "Developer mode". Here are the steps to do that...
 
