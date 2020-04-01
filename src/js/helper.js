@@ -55,34 +55,34 @@ const helper = {
     const randIndex = Math.floor(Math.random() * 3);
     const stateAssets = {
       state1: [
-        `../../assets/idle-pangolin.gif`,
-        `../../assets/idle-pangolin.gif`,
-        `../../assets/idle-pangolin.gif`
+        `../../assets/browser-pets/pangolin/idle-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/idle-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/idle-pangolin.gif`
       ],
       state2: [
-        `../../assets/idle-pangolin.gif`,
-        `../../assets/idle-pangolin.gif`,
-        `../../assets/idle-pangolin.gif`
+        `../../assets/browser-pets/pangolin/idle-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/idle-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/idle-pangolin.gif`
       ],
       state3: [
-        `../../assets/asleep-pangolin.gif`,
-        `../../assets/asleep-pangolin.gif`,
-        `../../assets/asleep-pangolin.gif`
+        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`
       ],
       state4: [
-        `../../assets/asleep-pangolin.gif`,
-        `../../assets/asleep-pangolin.gif`,
-        `../../assets/asleep-pangolin.gif`
+        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`
       ],
       state5: [
-        `../../assets/RIP-pangolin.gif`,
-        `../../assets/RIP-pangolin.gif`,
-        `../../assets/RIP-pangolin.gif`
+        `../../assets/browser-pets/pangolin/RIP-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/RIP-pangolin.gif`,
+        `../../assets/browser-pets/pangolin/RIP-pangolin.gif`
       ],
       state6: [
-        `../../assets/rip.gif`,
-        `../../assets/rip.gif`,
-        `../../assets/rip.gif`
+        `../../assets/browser-pets/pangolin/rip.gif`,
+        `../../assets/browser-pets/pangolin/rip.gif`,
+        `../../assets/browser-pets/pangolin/rip.gif`
       ]
     };
 
