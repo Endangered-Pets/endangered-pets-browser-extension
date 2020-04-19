@@ -5,6 +5,7 @@ const MAX_HEALTH = 100;
 let goodieInterval = undefined;
 let globalState = {};
 
+
 function getTabsCount() {
   return new Promise((resolve) => {
     chrome.tabs.query({}, (tabs) => {

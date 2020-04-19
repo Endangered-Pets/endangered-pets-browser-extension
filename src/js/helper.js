@@ -118,7 +118,7 @@ const helper = {
   * Start the interval timer that will be used to get new goodies based on tab count over a period of time.
   */
   handleGoodieTimer: (elements, state) => {
-    // if more than 5 tabs, kill goodie timer else start it if it hasnt already been.
+    // if more than 5 tabs, stop goodie timer else start it if it hasnt already been.
     // remove pending blink animation on next goodie segment.
     if (state.tabCount > 5) {
 
@@ -130,10 +130,10 @@ const helper = {
     }
     if(state.tabCount < 11){
       elements.pet.addEventListener(`mouseover`, function() {
-        elements.pet.src = `../../assets/bigpangolin.gif`;
+        elements.pet.src = `../../assets/browser-pets/pangolin/bigpangolin.gif`;
       });
       elements.pet.addEventListener(`mouseout`, function() {
-        elements.pet.src = `../../assets/idle-pangolin.gif`;
+        elements.pet.src = `../../assets/browser-pets/pangolin/idle-pangolin.gif`;
       });
     }
 
@@ -179,9 +179,7 @@ const helper = {
     // helper.setUI(elements, state);
   },
   /*
-  * setUI
   *
-  * set the UI based on current state
   */
   setUI: (elements, state) => {
     const hp = state.hp <= 0 ? 0 : state.hp;
