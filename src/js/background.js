@@ -54,7 +54,6 @@ function clearGoodieTimer() {
 function handleGoodieTimer() {
 
   // if more than 5 tabs,  goodie timer else start it if it hasnt already been.
-
   const tabCount = globalState.tabCount;
 
   if (tabCount > 5) {
@@ -100,18 +99,18 @@ function updatePetState() {
     state.tabCount = tabCount;
     state.hp = MAX_HEALTH - 4 * state.tabCount;
     //Can't go lower than 0 hp
-    if(state.hp < 1){
+    if(state.hp <= 1){
     state.hp = 0;
   }
 
     let statusText = [];
     const randIndex = Math.floor(Math.random() * 3);
 
-    if (state.hp === MAX_HEALTH ) {
+    if (state.hp === MAX_HEALTH) {
       statusText = [
-      `"The Pangolin is the only animal in the world to covered head to toe in keratin scales"`,
-      `"The Pangolin is the only animal in the world to covered head to toe in keratin scales`,
-      `The Pangolin is the only animal in the world to covered head to toe in keratin scales3`];
+      `"The Pangolin is the only animal in the world covered head to toe in keratin scales "`,
+      `"The Pangolin is the only animal in the world covered head to toe in keratin scales"`,
+      `"The Pangolin is the only animal in the world covered head to toe in keratin scales"`];
       state.petStatus = statusText[randIndex];
     } else if (state.hp <= 99 && state.hp >= 80 || state.hp == 96 || state.hp == 92 || state.hp == 88 || state.hp == 84 || state.hp == 80) {
       statusText = [`There are 8 species of pangolin!`,
@@ -136,18 +135,27 @@ function updatePetState() {
         `There are 8 types of Pangolin`,
         `Pangolins have been linked with strands of Coronavirus!`];
       state.petStatus = statusText[randIndex];
-    } else if (state.hp <= 19 && state.hp >= 1) {
+    } else if (state.hp <= 19 && state.hp > 1) {
       statusText = [
-        `Your Pangolin is Feeling Sick... Close tabs to heal your pet!`,
-        `Your Pangolin is Feeling Sick... Close tabs to heal your Pet`,
-        `Your Pangolin is feeling Sick.... Close tabs to heal your Pet!`];
+        `Your Pangolin is Feeling Sick... Close tabs to heal your pet `,
+        `Your Pangolin is Feeling Sick... Close tabs to heal your pet`,
+        `Your Pangolin is feeling Sick.... Close tabs to heal your pet `];
       state.petStatus = statusText[randIndex];
-    } else if(state.hp === MIN_HEALTH ){
-      state.petStatus= `"The Pangolin is the only animal in the world to covered head to toe in keratin scales"`;
+    } else if(state.hp === MIN_HEALTH){
+      statusText = [
+        `RIP Pet Pangolin... Close more tabs to bring your endangered pet back to life `,
+        `RIP Pet Pangolin... Close more tabs to bring your endangered pet back to life  `,
+        `RIP Pet Pangolin... Close more tabs to bring your endangered pet back to life `];
+
+      state.petStatus = statusText[randIndex];
+
 }
-else{
-  state.petStatus= `"The Pangolin is the only animal in the world to covered head to toe in keratin scales"`;
-}
+
+
+
+//      `RIP Pet Pangolin... Close more tabs to bring your Endangeed Pet Back to Life!`];
+
+
 
     chrome.storage.local.set({pet: state}, () => {
       globalState = state;

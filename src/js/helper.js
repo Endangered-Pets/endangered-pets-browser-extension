@@ -36,7 +36,7 @@ const helper = {
       displayItems = allItems.slice(0,2);
     }
     else if (state.hp <=0) {
-    displayItems = allItems.slice(0,1);
+    displayItems = allItems.slice(0,0);
     }
 
     // display the items
@@ -76,7 +76,7 @@ const helper = {
     if (state.hp == 100) {
       // pet is full health
       elements.pet.src = stateAssets.state1[0];
-    } else if (state.hp <= 99 && state.hp >= 80) {
+    } else if (state.hp <= 99 && state.hp >= 80 || state.hp == 96 || state.hp == 92 || state.hp == 88 || state.hp == 84 || state.hp == 80) {
       // pet is content
       elements.pet.src = stateAssets.state1[0];
     } else if (state.hp <= 79 && state.hp >= 60 || state.hp == 76 || state.hp == 72 || state.hp == 68 || state.hp == 64 || state.hp == 60) {
@@ -91,7 +91,7 @@ const helper = {
     } else if (state.hp <= 19 && state.hp >= 1 || state.hp == 16 || state.hp == 12 || state.hp == 8 || state.hp == 4) {
       // pet is dying
       elements.pet.src = stateAssets.state5[0];
-    } else if (state.hp <= 0 || state.hp == 0 || state.hp === 0) {
+    } else if (state.hp === 0) {
       // pet is dead (RIP)
       elements.pet.src = stateAssets.state6[0];
     }

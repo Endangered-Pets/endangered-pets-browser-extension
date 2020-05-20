@@ -12,7 +12,6 @@ body {
   min-width: 670px;
 }
 
-
 @font-face {
   font-family: 'IBMPlexSans-Regular';
   src: url('../fonts/IBMPlexSans-Regular.ttf') format("truetype");
@@ -87,7 +86,7 @@ header {
 }
 
 .goodie-segment.on {
-  background: #F2CC7B;
+  background: #FFD300;
 }
 
 .goodie-segment.toggle {
@@ -103,7 +102,7 @@ header {
     background: lightgray;
   }
   100% {
-    background: darkgray;
+    background: #FFD300;
   }
 }
 
@@ -112,7 +111,7 @@ header {
     background: lightgray;
   }
   100% {
-    background: darkgray;
+    background: #FFD300;
   }
 }
 
@@ -121,7 +120,7 @@ header {
     background: lightgray;
   }
   100% {
-    background: darkgray;
+    background: #FFD300;
   }
 }
 
@@ -130,7 +129,7 @@ header {
     background: lightgray;
   }
   100% {
-    background: darkgray;
+    background: #FFD300;
   }
 }
 
@@ -139,7 +138,7 @@ header {
     background: lightgray;
   }
   100% {
-    background: darkgray;
+    background: #FFD300;
   }
 }
 
@@ -147,14 +146,14 @@ header {
 #goodie-outer-container p {
   text-align: center;
   padding-bottom: 5px;
-  font-family: 'visitor';
+  font-family: 'IBMPlexSans_Regular';
   color: #545454;
   font-weight: normal;
 }
 
 #goodie-outer-container p {
   padding-top: 12px;
-  font-family: 'visitor';
+  font-family: 'IBMPlexSans_Regular';
   font-weight: normal;
   font-size: 15px;
   color: #545454;
@@ -222,7 +221,7 @@ header {
 #hp-outer-container p {
   text-align: center;
   padding-bottom: 5px;
-  font-family: 'visitor';
+  font-family: 'IBMPlexSans_Regular';
   color: #545454;
   font-weight: normal;
 
@@ -319,7 +318,7 @@ header {
   bottom: 50px;
   width: 100%;
   text-align: center;
-  font-family: 'gamegirl';
+  font-family: 'IBMPlexSans_Regular';
   font-size: 18px;
   opacity: .75;
   color: #545454;
@@ -348,7 +347,7 @@ footer {
 #tab-count {
   text-align: center;
   font-size: 15px;
-  font-family: 'Andale Mono';
+  font-family: 'IBMPlexSans_Regular';
   text-transform: uppercase;
   color: #545454;
   font-weight: normal;
@@ -405,12 +404,12 @@ header .tip img {
 
 .tip-modal {
   position: absolute;
-  background: #F2CC7B;
+  background: #FFD300;
   color: white;
   width: 200px;
   padding: 10px;
   display: none;
-  font-family: 'Andale Mono';
+  font-family: 'IBMPlexSans_Regular';
 }
 
 #goodie-tip {
@@ -443,7 +442,16 @@ header .tip img {
   width: 100vw;
   left: 0;
   top: 0;
-    background-color: #F2CC7B;
+  /* Beige Colour */
+  background-color: #F9E4B7;
+}
+
+#preloader-container h1{
+  color: white;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  font-size: 80px;
 }
 
 .loader,
@@ -457,6 +465,8 @@ header .tip img {
   -webkit-animation: load7 1.8s infinite ease-in-out;
   animation: load7 1.8s infinite ease-in-out;
 }
+
+
 .loader {
   color: #ffffff;
   font-size: 10px;
