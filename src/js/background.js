@@ -2,6 +2,7 @@
 
 const TIME_INTERVAL = 3600000;
 const MAX_HEALTH = 100;
+const MIN_HEALTH = 0;
 let goodieInterval = undefined;
 let globalState = {};
 
@@ -97,31 +98,56 @@ function updatePetState() {
     return getTabsCount();
   }).then(tabCount => {
     state.tabCount = tabCount;
-    state.hp = MAX_HEALTH - 4 * tabCount;
+    state.hp = MAX_HEALTH - 4 * state.tabCount;
+    //Can't go lower than 0 hp
+    if(state.hp < 1){
+    state.hp = 0;
+  }
 
+    let statusText = [];
+    const randIndex = Math.floor(Math.random() * 3);
 
-    let textArray = [];
-    const randIndex = Math.floor(Math.random() * (3));
-    if (state.hp === MAX_HEALTH) {
-      state.petStatus = `"The pangolin is the only animal in the world to be covered head to toe in keratin scales!"`;
-    } else if (state.hp <= 99 && state.hp >= 80) {
-      textArray = [`"There are 8 species of pangolin!"`,`Like a skunk, pangolins can release a noxious- smelling acid to deter predators.`,`Pangolins are the most trafficked animals in the world!`];
-      state.petStatus = textArray[randIndex];
-    } else if (state.hp <= 79 && state.hp >= 60) {
-      textArray = [`There are eight species of Pangolin. Four are found in Asia: the Chinese, the Malayan, the Indian and the Palawan Pangolin. Four are found in Africa: the Tree Pangolin, the Giant Ground Pangolin, the Cape Pangolin and the Long-tailed Pangolin.`,`Cute pangolin pups hitch a ride on their mother’s tails for three months and remain in their mother’s care for five months before braving life solo.`, `A pangolin is taken from the wild every 5 minutes`];
-      state.petStatus = textArray[randIndex];
-    } else if (state.hp <= 59 && state.hp >= 40) {
-      textArray = [`"The largest Pangolin is the Ground Pangolin"`,`"The smallest Pangolin is the Black-bellied Pangolin"`,`"Pangolins are also known as scaly ant-eaters"`];
-      state.petStatus = textArray[randIndex];
-    } else if (state.hp <= 39 && state.hp >= 20) {
-      textArray = [`"There are only 50,000 Pangolins left in existence!"`,`"There are 8 types of Pangolin"`,`"Pangolins have been linked with strands of Coronavirus!"`];
-      state.petStatus = textArray[randIndex];
+    if (state.hp === MAX_HEALTH ) {
+      statusText = [
+      `"The Pangolin is the only animal in the world to covered head to toe in keratin scales"`,
+      `"The Pangolin is the only animal in the world to covered head to toe in keratin scales`,
+      `The Pangolin is the only animal in the world to covered head to toe in keratin scales3`];
+      state.petStatus = statusText[randIndex];
+    } else if (state.hp <= 99 && state.hp >= 80 || state.hp == 96 || state.hp == 92 || state.hp == 88 || state.hp == 84 || state.hp == 80) {
+      statusText = [`There are 8 species of pangolin!`,
+        `Like a skunk, pangolins can release a noxious- smelling acid to deter predators.`,
+        `Pangolins are the most trafficked animals in the world!`];
+      state.petStatus = statusText[randIndex];
+    } else if (state.hp <= 79 && state.hp >= 60 || state.hp == 76 || state.hp == 72 || state.hp == 68 || state.hp == 64 || state.hp == 60) {
+      statusText = [
+        `There are eight species of Pangolin. Four are found in Asia: the Chinese, the Malayan, the Indian and the Palawan Pangolin. Four are found in Africa: the Tree Pangolin, the Giant Ground Pangolin, the Cape Pangolin and the Long-tailed Pangolin.`,
+        `Cute pangolin pups hitch a ride on their mother’s tails for three months and remain in their mother’s care for five months before braving life solo.`,
+        `A pangolin is taken from the wild every 5 minutes`];
+      state.petStatus = statusText[randIndex];
+    } else if (state.hp <= 59 && state.hp >= 40 || state.hp == 56 || state.hp == 52 || state.hp == 48 || state.hp == 44 || state.hp == 40) {
+      statusText = [
+        `The largest Pangolin is the Ground Pangolin`,
+        `The smallest Pangolin is the Black-bellied Pangolin`,
+        `Pangolins are also known as scaly ant-eaters`];
+      state.petStatus = statusText[randIndex];
+    } else if (state.hp <= 39 && state.hp >= 20 || state.hp == 36 || state.hp == 32 || state.hp == 28 || state.hp == 24 || state.hp == 20) {
+      statusText = [
+        `There are only 50,000 Pangolins left in existence!`,
+        `There are 8 types of Pangolin`,
+        `Pangolins have been linked with strands of Coronavirus!`];
+      state.petStatus = statusText[randIndex];
     } else if (state.hp <= 19 && state.hp >= 1) {
-      textArray = [`"Your Pangolin is Feeling Sick... Close tabs to heal your pet!"`,`"Your Pangolin is Feeling Sick... Close tabs to heal your Pet"`, '"Your Pangolin is feeling Sick.... Close tabs to heal your Pet!"'];
-      state.petStatus = textArray[randIndex];
-    } else if(state.hp <= 0){
-      state.petStatus = `"R.I.P. Pet Pangolin... Close Tabs to Revive Your Endangered Pet!"`;
-    }
+      statusText = [
+        `Your Pangolin is Feeling Sick... Close tabs to heal your pet!`,
+        `Your Pangolin is Feeling Sick... Close tabs to heal your Pet`,
+        `Your Pangolin is feeling Sick.... Close tabs to heal your Pet!`];
+      state.petStatus = statusText[randIndex];
+    } else if(state.hp === MIN_HEALTH ){
+      state.petStatus= `"The Pangolin is the only animal in the world to covered head to toe in keratin scales"`;
+}
+else{
+  state.petStatus= `"The Pangolin is the only animal in the world to covered head to toe in keratin scales"`;
+}
 
     chrome.storage.local.set({pet: state}, () => {
       globalState = state;

@@ -22,7 +22,6 @@ const helper = {
       });
     }
 
-
     if(state.hp >= 80){
       displayItems = allItems;
     }
@@ -55,61 +54,46 @@ const helper = {
     const randIndex = Math.floor(Math.random() * 3);
     const stateAssets = {
       state1: [
-        `../../assets/browser-pets/pangolin/idle-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/idle-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/idle-pangolin.gif`
+        `../../assets/browser-pets/pangolin/state1.gif`
       ],
       state2: [
-        `../../assets/browser-pets/pangolin/idle-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/idle-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/idle-pangolin.gif`
+        `../../assets/browser-pets/pangolin/state1.gif`
       ],
       state3: [
-        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`
+        `../../assets/browser-pets/pangolin/state2.gif`
       ],
       state4: [
-        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/asleep-pangolin.gif`
+        `../../assets/browser-pets/pangolin/state2.gif`
       ],
       state5: [
-        `../../assets/browser-pets/pangolin/RIP-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/RIP-pangolin.gif`,
-        `../../assets/browser-pets/pangolin/RIP-pangolin.gif`
+        `../../assets/browser-pets/pangolin/state3.gif`
       ],
       state6: [
-        `../../assets/browser-pets/pangolin/rip.gif`,
-        `../../assets/browser-pets/pangolin/rip.gif`,
-        `../../assets/browser-pets/pangolin/rip.gif`
+        `../../assets/browser-pets/pangolin/state6.gif`
       ]
     };
 
-    if (state.hp === 100) {
+    if (state.hp == 100) {
       // pet is full health
-      elements.pet.src = stateAssets.state1[randIndex];
+      elements.pet.src = stateAssets.state1[0];
     } else if (state.hp <= 99 && state.hp >= 80) {
       // pet is content
-      elements.pet.src = stateAssets.state1[randIndex];
-    } else if (state.hp <= 79 && state.hp >= 60) {
+      elements.pet.src = stateAssets.state1[0];
+    } else if (state.hp <= 79 && state.hp >= 60 || state.hp == 76 || state.hp == 72 || state.hp == 68 || state.hp == 64 || state.hp == 60) {
       // pet is irritated
-      elements.pet.src = stateAssets.state2[randIndex];
-    } else if (state.hp <= 59 && state.hp >= 40) {
+      elements.pet.src = stateAssets.state2[0];
+    } else if (state.hp <= 59 && state.hp >= 40 || state.hp == 56 || state.hp == 52 || state.hp == 48 || state.hp == 44 || state.hp == 40) {
       // pet is angry
-      elements.pet.src = stateAssets.state3[randIndex];
-    } else if (state.hp <= 39 && state.hp >= 20) {
+      elements.pet.src = stateAssets.state3[0];
+    } else if (state.hp <= 39 && state.hp >= 20 || state.hp == 36 || state.hp == 32 || state.hp == 28 || state.hp == 24 || state.hp == 20) {
       // pet is sick
-      //TODO: CHANGE THIS TO STATE 4
-      elements.pet.src = stateAssets.state4[randIndex];
-    } else if (state.hp <= 19 && state.hp >= 1) {
+      elements.pet.src = stateAssets.state4[0];
+    } else if (state.hp <= 19 && state.hp >= 1 || state.hp == 16 || state.hp == 12 || state.hp == 8 || state.hp == 4) {
       // pet is dying
-      //TODO: CHANGE THIS TO STATE 5
-      elements.pet.src = stateAssets.state5[randIndex];
-    } else if (state.hp <= 0) {
+      elements.pet.src = stateAssets.state5[0];
+    } else if (state.hp <= 0 || state.hp == 0 || state.hp === 0) {
       // pet is dead (RIP)
-      //TODO: CHANGE THIS TO STATE 6
-      elements.pet.src = stateAssets.state6[randIndex];
+      elements.pet.src = stateAssets.state6[0];
     }
   },
   /*
@@ -122,7 +106,6 @@ const helper = {
     // remove pending blink animation on next goodie segment.
     if (state.tabCount > 5) {
 
-
       const uiSegments = elements.goodieUISegments;
       for (let idx = 0; idx < uiSegments.length; idx++) {
         uiSegments[idx].classList.remove(`toggle`);
@@ -130,10 +113,10 @@ const helper = {
     }
     if(state.tabCount < 11){
       elements.pet.addEventListener(`mouseover`, function() {
-        elements.pet.src = `../../assets/browser-pets/pangolin/bigpangolin.gif`;
+        elements.pet.src = `../../assets/browser-pets/pangolin/touch-state.gif`;
       });
       elements.pet.addEventListener(`mouseout`, function() {
-        elements.pet.src = `../../assets/browser-pets/pangolin/idle-pangolin.gif`;
+        elements.pet.src = `../../assets/browser-pets/pangolin/state1.gif`;
       });
     }
 
@@ -176,18 +159,18 @@ const helper = {
     elements.goodieSilhouettes.classList.remove(`level-1`);
     elements.goodieSilhouettes.classList.add(`level-${state.goodieLevel}`);
 
-    // helper.setUI(elements, state);
+    helper.setUI(elements, state);
   },
   /*
   *
   */
   setUI: (elements, state) => {
-    const hp = state.hp <= 0 ? 0 : state.hp;
+    const hp = state.hp <= 0 ? state.hp = 0 : state.hp;
 
     // handle hp update
     elements.goodieState.innerText = `${state.goodieStage}/10`;
     elements.hpProgressBar.style.width = `${hp}%`;
-    elements.hpState.innerText = `${hp}/100`;
+    elements.hpState.innerText = `${Math.abs(hp)}/100`;
     elements.petStatus.innerText = `${state.petStatus}`;
     elements.tabCount.innerText = `You have ${state.tabCount} tabs open`;
 

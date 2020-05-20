@@ -14,28 +14,28 @@ body {
 
 
 @font-face {
-  font-family: 'visitor';
-  src: url('../fonts/visitor.ttf') format("truetype");
+  font-family: 'IBMPlexSans-Regular';
+  src: url('../fonts/IBMPlexSans-Regular.ttf') format("truetype");
 }
 
 @font-face {
-  font-family: 'VCR OSD MONO';
-  src: url('../fonts/VCR_OSD_MONO.ttf') format("truetype");
+  font-family: 'IBMPlexSans-Regular';
+  src: url('../fonts/IBMPlexSans-Regular.ttf') format("truetype");
 }
 
 @font-face {
-font-family: 'Andale Mono';
-src: url("../fonts/andale-mono.ttf") format("truetype");
+font-family: 'IBMPlexSans-Regular';
+src: url("../fonts/IBMPlexSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-font-family: 'gamegirl';
-src: url("../fonts/gamegirl.ttf") format("truetype");
+font-family: 'IBMPlexSans_Regular';
+src: url("../fonts/IBMPlexSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-font-family: 'joystix';
-src: url("../fonts/joystix.ttf") format("truetype");
+font-family: 'IBMPlexSans_Regular';
+src: url("../fonts/IBMPlexSans_Regular.ttf") format("truetype");
 }
 
 /* header */
