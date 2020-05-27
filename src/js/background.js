@@ -152,11 +152,7 @@ function updatePetState() {
 }
 
 
-
 //      `RIP Pet Pangolin... Close more tabs to bring your Endangeed Pet Back to Life!`];
-
-
-
     chrome.storage.local.set({pet: state}, () => {
       globalState = state;
       handleGoodieTimer();

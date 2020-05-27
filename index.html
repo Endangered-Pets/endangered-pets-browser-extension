@@ -1,32 +1,77 @@
+
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<meta name="description" content="">
-		<meta name="keywords" content="">
-		<meta name="author" content="">
-		<meta name="twitter:title" content="">
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="">
-		<meta name="twitter:author" content="">
-		<meta name="twitter:description" content="">
-		<meta name="twitter:image" content="">
-		<meta name="twitter:creator" content="">
-		<meta property="og:title" content="">
-		<meta property="og:url" content="">
-		<meta property="og:image" content="">
-		<meta property="og:description" content="">
-		<meta property="og:site_name" content="">
-		<meta property="og:type" content="website">
-		<title>New Tab</title>
-		<link href="css/styles.css" rel="stylesheet">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Files -->
+    <title>New Tab</title>
     <script src="src/js/helper.js"></script>
     <script src="src/js/endangered-pet.js"></script>
-	</head>
-	<body id="endangered-pet">
-    <!-- header -->
+
+    <!-- Bootstrap CSS CDN -->
+  <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/src/library-js/cloudflare-scroll-bar.js">
+
+    <!-- Font Awesome JS -->
+   <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+-->
+</head>
+
+<!-- Black Overlay when SideBar is opened -->
+<div class="overlay"></div>
+
+<body id="endangered-pet">
+
+<!-- Sidebar  -->
+    <div class="wrapper">
+
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3>Unlocked Goodies</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Dummy Heading</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Item1</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Item2</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                </li>    
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="" class="download">Button 1</a>
+                </li>
+                <li>
+                    <a href="" class="article">Button 2</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+<!-- End of Sidebar -->
+
+
+<!-- Endangered Pets CONTENT -->
+<!-- header -->
     <header>
       <!-- goodie unlock progress -->
       <div id="goodie-outer-container">
@@ -69,13 +114,15 @@
           </ul>
         </div>
       </div>
+
       <div id="goodie-tip" class="tip-modal">
         <p>Every hour you spend with 5 tabs or fewer gets you one bar closer to unlocking a new goodie for your endangered pet! <br><br>Once all 10 bars are full, your pet will get a new Goodie!</p>
       </div>
-      		<!-- Browser Extension to Website Link-->
-			<a href="https://endangered-pets.github.io/" class="p-title" target="_self"><img src="assets/browser-pets/pangolin/pangolin-title.png"></a>
+        <!-- Browser Extension to Website Link-->
+        <a href="https://endangered-pets.github.io/" class="p-title" target="_self"><img src="assets/browser-pets/pangolin/pangolin-title.png"></a> 
 
       <!-- hp indicator -->
+
       <div id="hp-outer-container">
         <h3>HEALTH<span class="tips-container"><a class="tip health" href="#"><img src="assets/misc/info.png"></a></span></h3>
         <div id="hp-inner-container">
@@ -87,6 +134,19 @@
         <p>For every tab you have open, you lose 4 HP. The less HP your Tabagotchi has, the more upset it will get!</p>
       </div>
     </header>
+<!-- Sidebar Button -->
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Goodies</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+<!-- END OF Sidebar Button -->
+
+
     <!-- middle -->
     <div id="middle">
       <!-- various item -->
@@ -104,26 +164,42 @@
           </a>
         </div>
 
-
       </div>
-			<h2 id="pet-text">Lorem Ipsum</h2>
-			<div class="tabcounter">
-				<h4 id="tab-count">You have 0 tabs open</h4> <span class="tips-container"><a class="tip pet" href="#"><img src="assets/misc/info.png"></a></span>
-			</div>
 
+            <h2 id="pet-text">Lorem Ipsum</h2>
+            <div class="tabcounter">
+                <h4 id="tab-count">You have 0 tabs open</h4> <span class="tips-container"><a class="tip pet" href="#"><img src="assets/misc/info.png"></a></span>
+            </div>
       <div id="pet-tip"  class="tip-modal">
         <p>Try and keep the number of tabs open in browser low to increase you productivity and keep your endngered pet healthy! </p>
       </div>
     </div>
+
     <!-- footer -->
     <footer>
-      	<!-- Browser Extension to Website Link-->
+        <!-- Browser Extension to Website Link-->
       <a href="https://endangered-pets.github.io/" class="credits" target="_blank"><img src="assets/browser-pets/pangolin/credits.png"></a>
     </footer>
+
     <!-- preloader -->
+
     <div id="preloader-container">
-			<h1> Loading</h1>
+            <h1> Loading</h1>
       <div class="loader"></div>
-    </div>
-	</body>
+    </div> 
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="/src/library-js/jquery-slim.js"></script>
+    <!-- Popper.JS -->
+    <script src="/src/library-js/popper.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/src/library-js/bootstrap.js"></script>
+
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="/src/library-js/jquery-scroller.js"></script>
+<!-- Sidebar.js -->
+    <script src="src/js/sidebar.js"></script>
+
+</body>
+
 </html>
